@@ -1,7 +1,7 @@
 Rathan Deep CS – UI/UX Portfolio
 A one-page portfolio website for my UI/UX and product design work.
 
-Live site: https://rathandeep.github.io/portfolio/
+Live site: https://rathandeep.github.io/Portfolio/
 
 About
 I'm a final-year Computer Science (Data Science) student at Dayananda Sagar University, Bangalore. I design user flows, wireframes and prototypes in Figma, and I use Python, SQL and Power BI to work with data. This site shows my projects, skills and how I work.
