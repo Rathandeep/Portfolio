@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rathan Deep CS – Product Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f6;--surface:#fff;--ink:#14213d;--muted:#55607a;--line:#d5dbe7;--accent:#2f5bff;--accent-ink:#fff;--hi:#ffd166;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1626;--surface:#17203a;--ink:#eaf0ff;--muted:#a3aecb;--line:#2a3558;--accent:#7b9bff;--accent-ink:#0f1626;--hi:#ffd166}}
+:root[data-theme="dark"]{--bg:#0f1626;--surface:#17203a;--ink:#eaf0ff;--muted:#a3aecb;--line:#2a3558;--accent:#7b9bff;--accent-ink:#0f1626;--hi:#ffd166}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}a:focus-visible,button:focus-visible,label:focus-within{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;gap:16px}
+nav b{font-family:'Bricolage Grotesque',sans-serif;font-size:19px}
+nav div{display:flex;gap:20px;font-size:15px}nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-size:clamp(40px,6.4vw,76px);font-weight:800;letter-spacing:-.025em}
+.hero p{color:var(--muted);max-width:48ch;margin:20px 0 28px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;margin-right:10px}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.canvas{position:relative;height:340px;background:var(--surface);border:1px solid var(--line);border-radius:14px;background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:18px 18px}
+.frame{position:absolute;background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:12px;font-size:13px;box-shadow:6px 6px 0 var(--ink)}
+.frame i{display:block;height:8px;border-radius:4px;background:var(--line);margin-top:8px}
+.frame b{font-family:'Bricolage Grotesque',sans-serif;font-size:14px}
+.f1{left:6%;top:12%;width:42%;height:62%}.f2{right:6%;top:6%;width:38%;height:46%;background:var(--hi);color:#14213d}.f2 i{background:rgba(20,33,61,.25)}.f3{right:12%;bottom:8%;width:40%;height:34%}
+.tag{position:absolute;left:44%;top:60%;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;padding:3px 9px;border-radius:0 8px 8px 8px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(30px,4vw,44px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 36px}
+.case{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;margin-bottom:56px;align-items:start}
+.case h3{font-size:28px;margin-bottom:8px}
+.case p{margin:0 0 12px;color:var(--muted)}
+.case ul{padding-left:20px;margin:0 0 14px}.case li{margin-bottom:6px}
+.pill{display:inline-block;padding:3px 12px;border:1px solid var(--line);border-radius:99px;font-size:13px;margin:0 6px 6px 0;background:var(--surface)}
+.win{font-weight:700;background:var(--hi);color:#14213d;border-color:var(--hi)}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.slot{position:relative;aspect-ratio:9/16;background:var(--surface);border:2px dashed var(--line);border-radius:12px;display:grid;place-items:center;text-align:center;font-size:13px;color:var(--muted);cursor:pointer;overflow:hidden;padding:8px}
+.slot:hover{border-color:var(--accent)}.slot input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wide{grid-column:1/-1;aspect-ratio:16/8}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{font-size:20px;margin-bottom:10px}.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.steps div{padding:20px;border-right:1px solid var(--line)}.steps div:last-child{border:0}.steps b{font-family:'Bricolage Grotesque',sans-serif;display:block;margin-bottom:4px}
+.steps span{color:var(--muted);font-size:14px}
+.tl p{margin:0 0 14px}.tl b{display:block}
+footer{padding:64px 0;border-top:1px solid var(--line)}
+footer h2{font-size:clamp(34px,5vw,58px)}
+.links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:24px}
+.sc{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(150px,auto);gap:16px;margin-top:8px}
+.t{border-radius:20px;padding:24px;overflow:hidden;position:relative;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.t small{font-size:12px;opacity:.7}
+.t1{grid-column:span 3;grid-row:span 2;min-height:380px;background:linear-gradient(145deg,#2f5bff,#7a3cff 60%,#ff5d8f);color:#fff;border:0}
+.t1 h3{font-size:clamp(36px,5vw,60px);font-weight:800;letter-spacing:-.02em;position:relative;z-index:1}
+.t1 .o{position:absolute;right:-60px;bottom:-60px;width:250px;height:250px;border-radius:50%;background:#ffd166}
+.t1 .o2{position:absolute;right:80px;bottom:100px;width:90px;height:90px;border-radius:50%;border:10px solid rgba(255,255,255,.5)}
+.t1 small{position:relative;z-index:1}
+.t2{grid-column:span 3;padding:0;flex-direction:row;gap:0}
+.t2 div{flex:1;display:flex;align-items:flex-end;padding:12px;font-size:12px;font-weight:700}
+.t6{grid-column:span 3;background:#14213d;color:#eaf0ff;border:0;flex-direction:row;align-items:center;justify-content:flex-start;gap:22px}
+.t6 p{margin:4px 0 0;color:#a3aecb;font-size:14px}
+.t3,.t4,.t5{grid-column:span 2}
+.aa{font:800 96px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em}
+.t3 p{margin:0;font-size:14px;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.b1,.b2{padding:9px 18px;border-radius:99px;font:700 14px 'DM Sans',sans-serif;cursor:default}
+.b1{border:0;background:var(--accent);color:var(--accent-ink)}.b2{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.tg{width:46px;height:26px;border-radius:99px;background:var(--accent);position:relative}.tg:after{content:'';position:absolute;right:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff}
+.in{flex:1;min-width:120px;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:var(--muted)}
+.ch{padding:4px 12px;border-radius:99px;font-size:13px;font-weight:700;background:#ffd166;color:#14213d}.ch.g{background:#cfe8d8}
+.ic{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;justify-items:center}.ic svg{width:30px;height:30px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.t7{grid-column:span 6;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-around}
+.mk{width:92px;height:92px;display:grid;place-items:center;font:800 44px 'Bricolage Grotesque',sans-serif}
+.br{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;color:#1d2a24;box-shadow:0 20px 50px rgba(20,33,61,.18);margin-bottom:20px}
+.br .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#eef0ee}.br .bar i{width:11px;height:11px;border-radius:50%;background:#c9cfc9}
+.br .url{margin:0 auto;background:#fff;border-radius:99px;padding:3px 40px;font-size:12px;color:#55607a}
+.sn{display:flex;align-items:center;gap:22px;padding:16px 28px;font-size:14px}.sn b{font:800 24px 'Bricolage Grotesque',sans-serif;margin-right:auto}.sn .c{background:#e86a4a;color:#fff;border-radius:99px;padding:2px 9px;font-weight:700;font-size:12px}
+.sh{display:grid;grid-template-columns:1fr 1fr;background:#dfe8df;margin:0 28px;border-radius:20px;overflow:hidden}
+.sh .l{padding:44px 36px}.sh h3{font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-.02em}
+.sh p{color:#4a5a50;margin:14px 0 22px;max-width:36ch}.sh .cta{display:inline-block;background:#1d2a24;color:#fff;padding:12px 22px;border-radius:99px;font-weight:700;font-size:14px}
+.sh .r{position:relative;min-height:300px}.sh .r svg{position:absolute;inset:0;width:100%;height:100%}
+.pc{position:absolute;right:18px;bottom:18px;background:#fff;border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:24px 28px}
+.pi .im{aspect-ratio:1;border-radius:16px;display:grid;place-items:center}.pi .im svg{width:62%}
+.pi b{display:block;font-size:14px;margin-top:10px}.pi span{font-size:13px;color:#4a5a50}.pi em{float:right;font-style:normal;font-weight:700}
+.sv{display:flex;justify-content:space-around;gap:12px;padding:14px;background:#1d2a24;color:#dfe8df;font-size:13px;flex-wrap:wrap}
+.mob{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;background:#dfe8df;border-radius:20px;padding:32px;margin-bottom:40px}.mob svg{width:200px;border-radius:26px;border:4px solid #1d2a24;display:block}
+.sub{font-size:24px;margin:32px 0 16px}
+@media(max-width:800px){.sh{grid-template-columns:1fr;margin:0 12px}.pg{grid-template-columns:repeat(2,1fr);padding:16px 12px}.sn{gap:12px;padding:12px 14px;font-size:12px}.sn .hide{display:none}}
+@media(max-width:800px){.sc{grid-template-columns:1fr}.sc .t{grid-column:auto!important;grid-row:auto!important}.t2{min-height:180px}}
+@media(max-width:800px){.hero,.case{grid-template-columns:1fr}nav div a:nth-child(n+4){display:none}.steps div{border-right:0;border-bottom:1px solid var(--line)}}
+@media(prefers-reduced-motion:no-preference){.tag{animation:nudge 1.6s ease-in-out .6s 2 both}@keyframes nudge{50%{transform:translate(26px,-12px)}}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Rathan Deep CS</b><div><a href="#about">About</a><a href="#process">Process</a><a href="#work">Design work</a><a href="#showcase">Showcase</a><a href="#recognition">Recognition</a><a href="#contact">Contact</a></div></div></nav>
+
+<main>
+<div class="wrap hero">
+<div>
+<h1>I design apps people can use when it matters most.</h1>
+<p>Product designer and Data Science undergraduate. I turn complex data (crop disease, air quality, emergency requests) into screens that are quick to read and easy to act on.</p>
+<a class="btn" href="#work">See my design work</a><a class="btn alt" href="#contact">Get in touch</a>
+</div>
+<div class="canvas" id="hc" role="img" aria-label="Sample app screens: crop scan, air quality map and emergency help"></div>
+</div>
+
+<section id="about"><div class="wrap">
+<h2>About me</h2>
+<p class="lead">I am a 4th-year B.Tech student in Computer Science (Data Science) at Dayananda Sagar University, Bangalore (CGPA 8.04, graduating 2027). My data background means I can read model outputs and design them so non-technical people understand them.</p>
+<div class="grid2">
+<div class="card"><h3>Design</h3><p>Figma, Photoshop, Illustrator, Canva, wireframing, prototyping, user flows, UX research basics, usability testing, visual design.</p></div>
+<div class="card"><h3>Data and code</h3><p>Python, MySQL, MongoDB, Power BI, Excel, Jupyter, Google Colab, GitHub, machine learning basics, statistics.</p></div>
+<div class="card"><h3>Languages</h3><p>English, Hindi and Kannada (full professional), Telugu (advanced).</p></div>
+</div>
+<h3 style="font-size:24px;margin:40px 0 16px">Experience and certifications</h3>
+<div class="tl">
+<p><b>Future Interns, Data Science and Analytics intern</b>Worked on real-world data science applications.</p>
+<p><b>Edunet Foundation, VOIS for Tech</b>Explored conversational data analytics with LLMs.</p>
+<p><b>Edunet Foundation, IBM SkillsBuild</b>4-week internship in AI and cloud technologies.</p>
+<p><b>Certifications</b>Microsoft Azure Data Fundamentals. Oracle Cloud Infrastructure 2025 Data Science Professional. NPTEL Business Fundamentals for Entrepreneurs.</p>
+</div>
+</div></section>
+<section id="process"><div class="wrap">
+<h2>How I work</h2>
+<p class="lead">I start with the person using the product, then let data and testing guide each decision.</p>
+<div class="steps"><div><b>Research</b><span>Talk to users and find the real task.</span></div><div><b>Flows</b><span>Map the shortest path to the goal.</span></div><div><b>Wireframes</b><span>Sketch layouts before styling.</span></div><div><b>Prototype</b><span>Build clickable versions in Figma.</span></div><div><b>Test</b><span>Watch people use it, then refine.</span></div></div>
+</div></section>
+<section id="work"><div class="wrap">
+<h2>Design work</h2>
+<p class="lead">Three projects, each designed end to end: research, user flows, wireframes, prototypes and final interfaces. The screens shown are sample visuals; tap any one to swap in your own.</p>
+
+<article class="case">
+<div>
+<span class="pill win">1st place, Udaya 1.0 Hackathon</span>
+<h3>AgriConnect</h3>
+<p>An AI-powered app that gives farmers market prices, crop disease detection from a photo, and financial help in one place.</p>
+<p><b>Role:</b> UX and UI design</p>
+<ul><li>Mapped user flows and screens for three core tasks so farmers reach each one in a few taps.</li><li>Kept the interface simple and easy to scan for people who need quick answers.</li><li>Showed machine learning results clearly so farmers can decide with data.</li></ul>
+<span class="pill">Figma</span><span class="pill">User flows</span><span class="pill">Prototype</span>
+</div>
+<div class="shots"><label class="slot wide">Add hero screen or prototype<input type="file" accept="image/*"></label><label class="slot">User flow<input type="file" accept="image/*"></label><label class="slot">Disease scan<input type="file" accept="image/*"></label><label class="slot">Market prices<input type="file" accept="image/*"></label></div>
+</article>
+
+<article class="case">
+<div>
+<span class="pill win">Runner-up, HackVerse 24-hour national hackathon</span>
+<h3>Vayu Sahayog</h3>
+<p>An air quality monitoring app that uses satellite data and AI so people can read pollution levels at a glance.</p>
+<p><b>Role:</b> Interface design, data visualization</p>
+<ul><li>Designed a map view with clear visual indicators for each air quality level.</li><li>Turned data processing and pollution modeling into simple visuals.</li></ul>
+<span class="pill">Figma</span><span class="pill">Data visualization</span><span class="pill">Map UI</span>
+</div>
+<div class="shots"><label class="slot wide">Add map view<input type="file" accept="image/*"></label><label class="slot">Dashboard<input type="file" accept="image/*"></label><label class="slot">Indicators<input type="file" accept="image/*"></label><label class="slot">Trends<input type="file" accept="image/*"></label></div>
+</article>
+
+<article class="case">
+<div>
+<span class="pill win">Shortlisted, DevHack 2.0 national hackathon</span>
+<h3>Emergency Assistance System</h3>
+<p>An Android app for emergencies that keeps working with poor connectivity, using Bluetooth mesh for offline communication, plus a dashboard for responders.</p>
+<p><b>Role:</b> UX and UI design</p>
+<ul><li>Designed a short, simple help flow for people in an emergency.</li><li>Built a Government Dashboard so responders can see incoming requests.</li><li>Designed for low-connectivity situations with offline mesh messaging.</li></ul>
+<span class="pill">Figma</span><span class="pill">Android</span><span class="pill">Dashboard</span>
+</div>
+<div class="shots"><label class="slot wide">Add dashboard design<input type="file" accept="image/*"></label><label class="slot">Help flow<input type="file" accept="image/*"></label><label class="slot">Offline mode<input type="file" accept="image/*"></label><label class="slot">Request list<input type="file" accept="image/*"></label></div>
+</article>
+
+<h3 style="font-size:24px;margin-bottom:16px">Other creative work</h3>
+<div class="shots" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))"><label class="slot" style="aspect-ratio:1">Poster or visual design<input type="file" accept="image/*"></label><label class="slot" style="aspect-ratio:1">Illustration or drawing<input type="file" accept="image/*"></label><label class="slot" style="aspect-ratio:1">Photography<input type="file" accept="image/*"></label><label class="slot" style="aspect-ratio:1">Video or edit<input type="file" accept="image/*"></label></div>
+</div></section>
+
+<section id="showcase"><div class='wrap'>
+<h2>Design showcase</h2>
+<p class='lead'>Visual design on its own: poster layout, colour, type, interface components, icons and brand marks.</p>
+<h3 class='sub' style='margin-top:8px'>Shopping website: Nook, a home store</h3>
+<div class='br'><div class='bar'><i></i><i></i><i></i><span class='url'>nook.store</span></div>
+<div class='sn'><b>nook</b><span>Shop</span><span>Living</span><span>Kitchen</span><span class='hide'>Sale</span><span class='hide'>Search</span><span class='c'>Cart 2</span></div>
+<div class='sh'><div class='l'><h3>Quiet things for busy homes.</h3><p>Lighting, ceramics and furniture made to last. Free delivery over ₹2,999.</p><span class='cta'>Shop new arrivals</span></div>
+<div class='r'><svg viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'><circle cx='250' cy='150' r='125' fill='#f2c3ad'/><ellipse cx='110' cy='275' rx='46' ry='8' fill='#1d2a24' opacity='.2'/><path d='M110 270V110' stroke='#1d2a24' stroke-width='6'/><path d='M70 112Q110 40 160 100L146 118Z' fill='#e86a4a'/><ellipse cx='110' cy='272' rx='34' ry='7' fill='#1d2a24'/><path d='M270 120h36v26c26 12 30 62 14 110h-64c-16-48-12-98 14-110z' fill='#2f5bff'/><path d='M288 120c-6-30 12-50 30-62' stroke='#1d2a24' stroke-width='4' fill='none'/><circle cx='318' cy='56' r='10' fill='#ffd166'/></svg><div class='pc'><b>Arc floor lamp</b><br>₹4,999 &nbsp;★ 4.8</div></div></div>
+<div class='pg'>
+<div class='pi'><div class='im' style='background:#f3e4d7'><svg viewBox='0 0 100 100'><path d='M50 86V44' stroke='#1d2a24' stroke-width='4'/><path d='M28 46Q50 6 74 40L66 50Z' fill='#e86a4a'/><ellipse cx='50' cy='88' rx='18' ry='4' fill='#1d2a24'/></svg></div><b>Arc floor lamp <em>₹4,999</em></b><span>Matte steel, 3 colours</span></div>
+<div class='pi'><div class='im' style='background:#dfe8f5'><svg viewBox='0 0 100 100'><path d='M40 18h20v14c14 6 16 34 8 54H32c-8-20-6-48 8-54z' fill='#2f5bff'/></svg></div><b>Glaze vase <em>₹1,299</em></b><span>Handmade ceramic</span></div>
+<div class='pi'><div class='im' style='background:#f7e3e3'><svg viewBox='0 0 100 100'><rect x='24' y='50' width='52' height='14' rx='5' fill='#e86a4a'/><rect x='24' y='22' width='10' height='42' rx='4' fill='#e86a4a'/><path d='M30 64l-6 22M70 64l6 22' stroke='#1d2a24' stroke-width='4' stroke-linecap='round'/></svg></div><b>Linen chair <em>₹7,499</em></b><span>Solid oak frame</span></div>
+<div class='pi'><div class='im' style='background:#e9e4f7'><svg viewBox='0 0 100 100'><rect x='26' y='34' width='42' height='46' rx='10' fill='#7a3cff'/><path d='M68 44h8a10 10 0 0 1 0 22h-8' stroke='#7a3cff' stroke-width='6' fill='none'/></svg></div><b>Stone mug <em>₹499</em></b><span>Set of 2</span></div>
+</div>
+<div class='sv'><span>Free delivery over ₹2,999</span><span>30-day returns</span><span>Secure payment</span></div></div>
+<div class='mob' id='shopm'></div>
+<h3 class='sub'>Visual details</h3>
+<div class='sc'>
+<div class='t t1'><span class='o'></span><span class='o2'></span><h3>Design for people.</h3><small>Poster concept</small></div>
+<div class='t t2'><div style='background:#14213d;color:#fff'>#14213d</div><div style='background:#2f5bff;color:#fff'>#2f5bff</div><div style='background:#7a3cff;color:#fff'>#7a3cff</div><div style='background:#ff5d8f;color:#14213d'>#ff5d8f</div><div style='background:#ffd166;color:#14213d'>#ffd166</div></div>
+<div class='t t6'><svg width='104' height='104' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='none' stroke='#2a3558' stroke-width='10'/><circle cx='50' cy='50' r='40' fill='none' stroke='#ffd166' stroke-width='10' stroke-linecap='round' stroke-dasharray='181 251' transform='rotate(-90 50 50)'/><text x='50' y='57' text-anchor='middle' font-size='22' font-weight='800' fill='#eaf0ff' font-family='Bricolage Grotesque,sans-serif'>72%</text></svg><div><h3 style='font-size:26px'>Focus today</h3><p>3 of 4 sessions done</p><div class='row' style='margin-top:12px'><span class='ch'>Deep work</span><span class='ch g'>On track</span></div></div></div>
+<div class='t t3'><div class='aa'>Aa</div><div><p><b>Bricolage Grotesque</b> for headings</p><p><b>DM Sans</b> for reading</p></div></div>
+<div class='t t4'><div class='row'><span class='b1'>Save changes</span><span class='b2'>Cancel</span></div><div class='row'><div class='in'>Search crops</div><span class='tg'></span></div><small>Buttons, input and toggle</small></div>
+<div class='t t5'><div class='ic'><svg viewBox='0 0 24 24'><path d='M3 11l9-8 9 8v10h-6v-6h-6v6H3z'/></svg><svg viewBox='0 0 24 24'><circle cx='11' cy='11' r='7'/><path d='M16 16l5 5'/></svg><svg viewBox='0 0 24 24'><path d='M12 21s-8-5.5-8-11a4.500 4.500 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z'/></svg><svg viewBox='0 0 24 24'><path d='M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4'/></svg><svg viewBox='0 0 24 24'><circle cx='12' cy='8' r='4'/><path d='M4 21c0-4 4-6 8-6s8 2 8 6'/></svg><svg viewBox='0 0 24 24'><path d='M4 4h16v12H9l-5 4z'/></svg><svg viewBox='0 0 24 24'><rect x='3' y='7' width='18' height='13' rx='2'/><circle cx='12' cy='13' r='4'/><path d='M8 7l2-3h4l2 3'/></svg><svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='4'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2'/></svg></div><small>Icon set</small></div>
+<div class='t t7'><div class='mk' style='background:#2f5bff;color:#fff;border-radius:50%'>R</div><div class='mk' style='background:#14213d;color:#ffd166;border-radius:22px'>R</div><div class='mk' style='background:#ffd166;color:#14213d;border-radius:50% 50% 0 50%'>R</div><div class='mk' style='border:4px solid var(--ink);color:var(--ink);border-radius:8px'>R</div><div class='mk' style='background:linear-gradient(135deg,#7a3cff,#ff5d8f);color:#fff;border-radius:50% 0 50% 50%'>R</div><small style='width:100%;text-align:center'>Brand mark explorations</small></div>
+</div></div></section>
+
+<section id="recognition"><div class="wrap">
+<h2>Recognition</h2>
+<div class="grid2" style="margin-top:24px">
+<div class="card"><h3>1st place</h3><p>Udaya 1.0 Hackathon, for AgriConnect.</p></div>
+<div class="card"><h3>2nd place</h3><p>HackVerse 24-hour national hackathon (TechFusion, DSATM), with a ₹5,000 prize, for Vayu Sahayog.</p></div>
+<div class="card"><h3>Shortlisted</h3><p>DevHack 2.0 national hackathon, for the emergency assistance app.</p></div>
+<div class="card"><h3>Participant</h3><p>Hack Karnataka at KLE Technological University.</p></div>
+</div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<h2>Let's design something useful.</h2>
+<p class="lead" style="margin-top:12px">I am looking for product design opportunities where I can learn, contribute and grow.</p>
+<div class="links"><a class="btn" href="mailto:deepcsrathandeep@gmail.com">Email me</a><a href="tel:+916361624423">+91 63616 24423</a><a href="https://www.linkedin.com/in/rathan-deep-cs-deep-212b59358">LinkedIn</a><a href="https://github.com/Rathandeep">GitHub</a></div>
+</div></footer>
+<script>
+document.querySelectorAll('.slot input').forEach(function(inp){inp.addEventListener('change',function(){var f=inp.files&&inp.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var old=inp.parentNode.querySelector('img');if(old)old.remove();var bd=inp.parentNode.querySelector('span');if(bd)bd.remove();var im=new Image();im.alt='Design screen';im.src=r.result;inp.parentNode.appendChild(im)};r.readAsDataURL(f)})});
+var ACC=['#2e9e6b','#2f5bff','#e5484d'],NS='xmlns="http://www.w3.org/2000/svg"';
+function R(x,y,w,h,r,f,e){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+r+'" fill="'+f+'" '+(e||'')+'/>'}
+function T(x,y,s,t,w,c,a){return '<text x="'+x+'" y="'+y+'" font-size="'+s+'" font-weight="'+(w||500)+'" fill="'+(c||'#14213d')+'" text-anchor="'+(a||'start')+'" font-family="DM Sans,Arial,sans-serif">'+t+'</text>'}
+function C(x,y,r,f,o){return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+f+'" opacity="'+(o||1)+'"/>'}
+function L(a,b,c,d,s,w){return '<line x1="'+a+'" y1="'+b+'" x2="'+c+'" y2="'+d+'" stroke="'+s+'" stroke-width="'+(w||2)+'"/>'}
+var K={
+scan:['Scan crop',function(a){return R(14,64,152,110,12,'#cfe8d8')+'<path d="M90 164C48 134 58 82 100 76C134 102 132 142 90 164Z" fill="#2e9e6b"/>'+L(90,164,98,96,'#1c6b47',2)+R(52,70,84,92,6,'none','stroke="#e5484d" stroke-width="2" stroke-dasharray="5 3"')+R(14,186,152,96,12,'#fff')+T(26,208,13,'Leaf blight',700)+T(26,224,10,'92% sure. Spreads in wet weather.',400,'#55607a')+R(26,246,128,26,13,a)+T(90,263,11,'See treatment',700,'#fff','middle')}],
+prices:['Market prices',function(a){var n=['Rice','Ragi','Tomato','Onion','Maize'],p=['2,310','3,846','18','24','2,090'],s='';for(var i=0;i<5;i++){s+=R(14,64+i*44,152,36,10,'#fff')+C(34,82+i*44,10,i%2?'#ffd166':'#cfe8d8')+T(52,86+i*44,12,n[i],700)+T(154,86+i*44,12,'₹'+p[i],700,i%3?a:'#e5484d','end')}return s}],
+flow:['User flow',function(a){var n=['Open app','Scan crop','See result','Get help'],s=L(90,84,90,250,'#c4ccdc',2);for(var i=0;i<4;i++){s+=R(30,66+i*62,120,38,12,i==3?a:'#fff','stroke="'+a+'" stroke-width="2"')+T(90,90+i*62,12,n[i],700,i==3?'#fff':'#14213d','middle')}return s}],
+map:['Air quality',function(a){return R(0,52,180,240,0,'#e3ebf5')+L(0,150,180,190,'#fff',8)+L(70,52,110,292,'#fff',8)+C(60,130,46,'#2e9e6b',.35)+C(120,190,50,'#ff8a3d',.45)+C(110,225,24,'#e5484d',.55)+C(84,168,7,a)+R(14,236,152,48,12,'#fff')+T(26,256,11,'Koramangala',400,'#55607a')+T(26,274,15,'AQI 142 Unhealthy',700)}],
+ind:['Levels',function(a){var c=['#2e9e6b','#ffd166','#ff8a3d','#e5484d'],n=['Good','Moderate','Unhealthy','Hazardous'],r=['0-50','51-100','101-200','201+'],s='';for(var i=0;i<4;i++){s+=R(14,64+i*58,152,48,12,'#fff')+R(14,64+i*58,10,48,5,c[i])+T(36,86+i*58,13,n[i],700)+T(36,102+i*58,10,'AQI '+r[i],400,'#55607a')}return s}],
+dash:['Overview',function(a){var s='';for(var i=0;i<3;i++)s+=R(14+i*52,64,48,52,10,'#fff')+T(38+i*52,92,16,['12','34','7'][i],800,a,'middle')+T(38+i*52,106,8,['Cities','Sensors','Alerts'][i],400,'#55607a','middle');s+=R(14,128,152,150,12,'#fff');var h=[40,70,55,95,80,110,60];for(var j=0;j<7;j++)s+=R(26+j*20,262-h[j],12,h[j],4,j==5?a:'#c9d6ff');return s}],
+trends:['Last 7 days',function(a){return R(14,64,152,140,12,'#fff')+'<polyline points="24,170 52,150 80,160 108,110 136,126 158,90" fill="none" stroke="'+a+'" stroke-width="3" stroke-linejoin="round"/>'+R(14,216,152,60,12,'#fff')+T(26,238,10,'Weekly average',400,'#55607a')+T(26,262,18,'AQI 98 down 12%',800)}],
+help:['Get help',function(a){return C(90,140,62,a,.15)+C(90,140,46,a)+T(90,147,24,'SOS',800,'#fff','middle')+T(90,226,11,'Hold to send help',700,'#14213d','middle')+R(14,244,46,28,14,'#fff')+R(67,244,46,28,14,'#fff')+R(120,244,46,28,14,'#fff')+T(37,262,9,'Medical',700,'#14213d','middle')+T(90,262,9,'Fire',700,'#14213d','middle')+T(143,262,9,'Police',700,'#14213d','middle')}],
+offline:['Offline mode',function(a){return L(90,130,50,200,a,2)+L(90,130,135,190,a,2)+L(50,200,135,190,a,2)+L(90,130,90,80,a,2)+C(90,130,16,a)+C(50,200,12,'#14213d')+C(135,190,12,'#14213d')+C(90,80,10,'#c4ccdc')+R(14,236,152,44,12,'#fff')+T(26,256,12,'3 phones nearby',700)+T(26,271,9,'Message sent without internet',400,'#55607a')}],
+req:['Requests',function(a){var t=['Medical','Fire','Rescue','Medical'],d=['0.8 km','1.4 km','2.1 km','3.0 km'],s='';for(var i=0;i<4;i++){s+=R(14,64+i*56,152,46,12,'#fff')+C(32,87+i*56,7,i<2?'#e5484d':'#ffd166')+T(48,84+i*56,12,t[i],700)+T(48,99+i*56,9,d[i]+' away',400,'#55607a')+R(120,77+i*56,36,20,10,a)+T(138,91+i*56,8,'Open',700,'#fff','middle')}return s}]};
+function phone(k,a,at){var o=K[k];return '<svg '+(at||'')+' viewBox="0 0 180 320" '+NS+'>'+R(0,0,180,320,0,'#f4f6fb')+R(0,0,180,50,0,a)+T(14,32,14,o[0],700,'#fff')+o[1](a)+R(0,294,180,26,0,'#fff')+C(60,307,3,'#c4ccdc')+C(90,307,3,a)+C(120,307,3,'#c4ccdc')+'</svg>'}
+var WIDE=[['scan','prices','AgriConnect','Scan crops. Know prices.'],['map','ind','Vayu Sahayog','Read the air at a glance.'],['help','req','Emergency Assist','Help that works offline.']];
+function wide(i){var w=WIDE[i],a=ACC[i];return '<svg viewBox="0 0 480 240" '+NS+'>'+R(0,0,480,240,0,a)+C(60,260,150,'#fff',.12)+C(250,-30,90,'#fff',.1)+T(28,100,28,w[2],800,'#fff')+T(28,126,13,w[3],500,'#fff')+R(28,146,86,26,13,'#fff')+T(71,163,11,'Case study',700,a,'middle')+phone(w[0],a,'x="262" y="22" width="112" height="200"')+phone(w[1],a,'x="366" y="46" width="112" height="200"')+'</svg>'}
+var ART={poster:'<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f5bff"/><stop offset="1" stop-color="#ff5d8f"/></linearGradient></defs>'+R(0,0,200,200,0,'url(#g)')+C(130,80,50,'#ffd166')+R(20,120,110,14,7,'#fff')+R(20,142,70,14,7,'#fff','opacity=".6"')+T(20,40,22,'Design',800,'#fff'),
+illus:R(0,0,200,200,0,'#ffe9c7')+C(100,110,60,'#ff8a3d')+C(78,96,9,'#14213d')+C(122,96,9,'#14213d')+'<path d="M76 130Q100 152 124 130" stroke="#14213d" stroke-width="5" fill="none" stroke-linecap="round"/>'+C(40,40,16,'#2f5bff')+C(165,45,10,'#2e9e6b'),
+photo:'<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a62"/><stop offset="1" stop-color="#ffe3b0"/></linearGradient></defs>'+R(0,0,200,200,0,'url(#s)')+C(140,90,26,'#fff3d6')+'<path d="M0 200V140L50 90L90 135L130 100L200 170V200Z" fill="#2b3a67"/><path d="M0 200V165L60 130L110 170L160 140L200 175V200Z" fill="#14213d"/>',
+video:R(0,0,200,200,0,'#14213d')+R(16,40,168,100,10,'#2f5bff')+'<path d="M88 70L120 90L88 110Z" fill="#fff"/>'+R(16,156,168,6,3,'#2a3558')+R(16,156,70,6,3,'#ffd166')};
+var MAP={'Add hero screen or prototype':'W','Add map view':'W','Add dashboard design':'W','User flow':'flow','Disease scan':'scan','Market prices':'prices','Dashboard':'dash','Indicators':'ind','Trends':'trends','Help flow':'help','Offline mode':'offline','Request list':'req','Poster or visual design':'poster','Illustration or drawing':'illus','Photography':'photo','Video or edit':'video'};
+document.querySelectorAll('.slot').forEach(function(s){var key=s.textContent.trim(),k=MAP[key];if(!k)return;var art=s.closest('.case'),i=art?Array.prototype.indexOf.call(document.querySelectorAll('.case'),art):0,svg;
+if(k=='W')svg=wide(i);else if(K[k])svg=phone(k,ACC[i],'');else svg='<svg viewBox="0 0 200 200" '+NS+'>'+ART[k]+'</svg>';
+var im=new Image();im.alt=key.replace(/^Add /,'')+' sample';im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);var b=document.createElement('span');b.textContent='Sample';b.style.cssText='position:absolute;top:8px;left:8px;z-index:1;font-size:11px;font-weight:700;background:var(--hi);color:#14213d;padding:2px 8px;border-radius:99px';s.appendChild(im);im.style.zIndex=0;});
+K.pdp=['Arc floor lamp',function(a){return R(14,60,152,116,14,'#f3e4d7')+'<path d="M90 160V96" stroke="#1d2a24" stroke-width="4"/><path d="M62 98Q90 50 124 92L114 104Z" fill="'+a+'"/>'+T(14,198,14,'Arc floor lamp',700)+T(14,216,10,'\u2605 4.8 (212 reviews)',400,'#55607a')+T(14,238,15,'\u20b94,999',800,a)+C(120,232,7,a)+C(138,232,7,'#14213d')+C(156,232,7,'#ffd166')+R(14,252,152,32,16,a)+T(90,272,12,'Add to cart',700,'#fff','middle')}];
+K.cart=['Your cart',function(a){var s='',n=['Arc floor lamp','Glaze vase'],p=['4,999','1,299'];for(var i=0;i<2;i++)s+=R(14,62+i*60,152,52,12,'#fff')+R(22,70+i*60,36,36,8,i?'#dfe8f5':'#f3e4d7')+T(66,86+i*60,11,n[i],700)+T(66,102+i*60,10,'\u20b9'+p[i],400,'#55607a');return s+R(14,190,152,66,12,'#fff')+T(26,212,10,'Delivery: Free',400,'#55607a')+T(26,238,15,'Total  \u20b96,298',800)+R(14,262,152,26,13,a)+T(90,279,12,'Checkout',700,'#fff','middle')}];
+(function(){var m=document.getElementById('shopm'),x=['pdp','cart'];m.innerHTML=x.map(function(k){return phone(k,'#e86a4a','')}).join('')})();
+(function(){var P=[['scan',0,10,50],['map',1,145,14],['help',2,280,60]],o='<svg viewBox="0 0 420 340" '+NS+' style="width:100%;height:100%">';P.forEach(function(p){o+=R(p[2]-3,p[3]-3,136,237,10,'#14213d')+phone(p[0],ACC[p[1]],'x="'+p[2]+'" y="'+p[3]+'" width="130" height="231"')});document.getElementById('hc').innerHTML=o+'</svg>'})();
+</script>
+</body>
+</html>
